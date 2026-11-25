@@ -1,0 +1,59 @@
+{
+  "assets": {
+    "font": "assets/font-800.ttf",
+    "fontHook": "assets/font-700.ttf",
+    "whisper": "~/whisper/ggml-small.bin",
+    "song": "assets/song.mp3",
+    "badge": "assets/google-play-badge.png"
+  },
+  "hook": "quando minha namorada pega meu celular...",
+  "hookUntilScene": 3,
+  "style": "Use the attached reference images. Same two characters, same outfits, same faces, same art style: 2D cartoon comic, thick black outlines, cel shading, warm saturated colors, exaggerated meme expressions. Vertical 9:16 full-bleed illustration. No captions and no logos. Any text that appears inside the scene must be in Brazilian Portuguese, never English.",
+  "sheet": "Character reference sheet, 2D cartoon comic style, thick black outlines, cel shading, warm saturated colors, exaggerated meme expressions. Two Brazilian characters side by side, each with a full-body front view and three face close-ups (happy, shocked, crying). LEFT: LUCAS, man, 28, athletic build, short messy dark brown hair, light stubble, plain tangerine orange t-shirt with no logo, black joggers, white sneakers. RIGHT: BIA, woman, 27, long curly dark hair in a high ponytail, gold hoop earrings, plain white t-shirt, light blue jeans. Plain white background. No text, no labels.",
+  "scenes": [
+    {
+      "vo": "Sou só eu, ou você também sai do nutri motivado e larga a dieta na primeira semana?",
+      "img": "Small apartment kitchen. Bia snatches the phone out of Lucas's hand. Lucas, holding a meal-prep container, falls back on the kitchen stool, shocked, sweat drop, arms flailing. Motion lines. Keep the top third of the frame simple (plain wall) for a caption."
+    },
+    {
+      "vo": "Ela achou que ia ter mensagem de outra. Só tinha a foto da dieta que eu nunca segui.",
+      "img": "Close-up of Bia holding the phone with both hands, her suspicious face turning into pity, one eyebrow raised, sweat drop. The phone screen faces the viewer and shows a photo of a printed meal plan sheet written in Brazilian Portuguese: the title at the top reads exactly \"DIETA\", and the rows are short Portuguese words like \"Café\", \"Almoço\", \"Lanche\", \"Jantar\". No English anywhere. Keep the top third simple for a caption."
+    },
+    {
+      "vo": "Segunda-feira eu tava focado: dieta na geladeira, marmita pronta, meta na cabeça.",
+      "img": "Same kitchen, morning light. Lucas stands proud, big grin, pointing at a meal plan sheet stuck on the fridge whose title reads exactly \"DIETA\" in Portuguese, with rows \"Café\", \"Almoço\", \"Lanche\", \"Jantar\" (no English anywhere), meal-prep containers stacked on the counter, sparkles around him. Bia in the background, arms crossed, unimpressed."
+    },
+    {
+      "vo": "Na quarta eu já não sabia o que tinha comido, e o resultado não vinha nem por pena.",
+      "img": "Night. Lucas stands in front of the open fridge, cold bluish fridge light on his face, confused and sad, one tear, the meal plan sheet crumpled on the floor."
+    },
+    {
+      "vo": "Olha a verdade: eu sei o que tenho que comer, mas não consigo seguir.",
+      "img": "Extreme close-up of Lucas's face, intense wide eyes, sweat drop, determined and frustrated, dramatic anime speed-lines background in blue and purple."
+    },
+    {
+      "vo": "A culpa não é da dieta: é que sem ver o dia na mão, ninguém sabe se tá no caminho.",
+      "img": "Lucas shrugs with open palms, confused, big white question marks floating around his head. Bia behind him, arms crossed, side-eye. Warm kitchen light."
+    },
+    {
+      "vo": "E se continuar assim, é mais um ano recomeçando toda segunda.",
+      "img": "A wall calendar where every Monday is circled in red and crossed out, covered in dust and cobwebs. Lucas beside it holding his head with both hands, crying dramatically. Grey, desaturated light."
+    },
+    {
+      "vo": "O que resolve é saber, na hora, quanto falta pra minha meta do dia.",
+      "img": "Lucas has an idea: a glowing light bulb above his head, tangerine orange energy aura exploding around him, power-up pose with a raised fist, sparks. Bia surprised in the background."
+    },
+    {
+      "vo": "Aí achei o Eatiary: foto do prato e ele me mostra quanto comi e quanto falta pra meta.",
+      "img": "Lucas at the kitchen table takes a photo of his plate (rice, beans, grilled chicken, salad) with his phone, amazed and happy, warm golden glow. Bia leans in, impressed. Leave empty space in the upper right corner.",
+      "gommo": "assets/mascote.png"
+    },
+    {
+      "vo": "Toca no botão e baixa o Eatiary.",
+      "img": "Same small apartment kitchen as the previous scenes, full detailed kitchen background (cabinets, fridge, counter), warm light. Lucas and Bia hug and laugh. Bia hugs Lucas; Lucas has one arm around Bia's shoulders and with that same hand holds a normal-sized smartphone up beside their heads, screen facing the viewer, the phone clearly attached to his hand and arm, realistic scale (about the size of his face). The phone screen is a plain flat solid pure green (#00FF00) rectangle, nothing on it. Lucas's other arm hugs Bia's waist. Each character has exactly two arms and two hands, no extra or floating hands. Sparkles. Keep the middle band of the frame calm.",
+      "badge": true,
+      "hold": 2.0,
+      "screen": "app/home.png"
+    }
+  ]
+}
