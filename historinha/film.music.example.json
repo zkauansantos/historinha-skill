@@ -1,0 +1,111 @@
+{
+  "assets": {
+    "font": "assets/font-800.ttf",
+    "fontHook": "assets/font-700.ttf",
+    "whisper": "~/whisper/ggml-small.bin",
+    "song": "song.mp3",
+    "badge": "assets/google-play-badge.png"
+  },
+  "lines": [
+    [
+      0.0,
+      5.0,
+      "Saí do nutri com a dieta na mão, prometi pra mim, agora vai, irmão"
+    ],
+    [
+      5.0,
+      9.8,
+      "Na quarta já não sabia o que comi, o resultado nunca veio, eu desisti"
+    ],
+    [
+      9.8,
+      14.68,
+      "No almoço de domingo minha mãe falou: de novo começando? Quantas vezes já tentou?"
+    ],
+    [
+      14.68,
+      19.52,
+      "Dieta na gaveta, meta esquecida, todo mês de novo a mesma recaída"
+    ],
+    [
+      19.52,
+      24.52,
+      "Até que um amigo do treino me mostrou, tirei foto do prato e ele me guiou"
+    ],
+    [
+      24.52,
+      30.16,
+      "Uma foto e eu sei onde eu tô, quanto falta pra meta, quanto já passou"
+    ],
+    [
+      30.16,
+      35.12,
+      "Sem chutar, sem culpa, sem me perder, agora eu tenho controle do que vou comer"
+    ],
+    [
+      35.12,
+      39.88,
+      "Domingo de novo, a mesma mesa posta, tirei uma foto, minha mãe ficou sem resposta"
+    ],
+    [
+      39.88,
+      43.72,
+      "Ainda tá na dieta? Mãe, já é o terceiro mês, pela primeira vez"
+    ],
+    [
+      43.72,
+      47.36,
+      "eu não desisti de vez. Baixa o Eatiary, foto e pronto"
+    ],
+    [
+      47.36,
+      54.32,
+      "Sua meta do dia sem fazer conta. Eatiary! Eatiary!"
+    ]
+  ],
+  "scenes": [
+    {
+      "img": "01",
+      "start": 0.0
+    },
+    {
+      "img": "02",
+      "start": 5.0
+    },
+    {
+      "img": "03",
+      "start": 9.8
+    },
+    {
+      "img": "04",
+      "start": 14.68
+    },
+    {
+      "img": "05",
+      "start": 19.52
+    },
+    {
+      "img": "06",
+      "start": 22.0,
+      "screen": "app/home.png"
+    },
+    {
+      "img": "07",
+      "start": 27.3,
+      "screen": "app/home.png"
+    },
+    {
+      "img": "08",
+      "start": 35.12
+    },
+    {
+      "img": "06",
+      "start": 43.72
+    },
+    {
+      "img": "10",
+      "start": 47.36,
+      "badge": true
+    }
+  ]
+}

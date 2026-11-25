@@ -1,6 +1,6 @@
 ---
 name: historinha
-description: Produz um anúncio "historinha meme" para app (cartoon 2D por IA, ~50 s, 10 cenas, narração em 1ª pessoa, legenda palavra por palavra, gancho em caixa branca, CTA de loja). Gera folha de personagem, cenas e voz no Gemini, cola a tela real do app no celular desenhado, escreve os prompts do Google Flow e monta o MP4. Use quando pedirem historinha, cartoon meme, vídeo narrado com personagem.
+description: Produz um anúncio "historinha meme" para app, narrado ou como clipe musical com música do Suno (cartoon 2D por IA, ~50 s, 10 cenas, narração em 1ª pessoa, legenda palavra por palavra, gancho em caixa branca, CTA de loja). Gera folha de personagem, cenas e voz no Gemini, cola a tela real do app no celular desenhado, escreve os prompts do Google Flow e monta o MP4. Use quando pedirem historinha, cartoon meme, vídeo narrado com personagem.
 ---
 
 # Historinha meme
@@ -37,6 +37,19 @@ Dor contada pelo personagem, em 1ª pessoa. Nada que afirme o corpo ou a vida de
 5. Animar no Flow: um clipe de 8 s por cena, imagem da cena como primeiro quadro, último quadro vazio, Veo 3.1 Lite. Passo a passo e prompts de exemplo em `references/flow.md`. Salve como `clips/01.mp4` ... `clips/10.mp4` (dois dígitos).
 6. Rode `build.py` de novo: ele usa o clipe quando existe, corta no tamanho da fala e descarta o som do Flow.
 
+## Variante musical (Suno)
+
+Em vez de narração, uma música cantada carrega a história (formato de x.com/thallisribeiro/status/2125031731182866713). Cortes de 3 a 6 s, uma testemunha fixa (ex.: a mãe) que vê a humilhação no começo e a prova no mesmo cenário no fim, e o nome do produto gigante em 3D no final.
+
+1. **Letra.** Estrutura: verso de dor, humilhação com a testemunha, pré-refrão (alguém mostra o produto), refrão de virada, verso 2 com a prova no mesmo lugar, refrão final com a oferta. Escreva o nome do produto do jeito que se fala (ex.: "Eatiary" vira "Itiéri"), senão o Suno lê em português.
+2. **Suno** (Create, modo Custom). Style of Music, por exemplo: `brazilian pop funk, light and catchy, male vocal, upbeat, 100 bpm, comedic, viral tiktok jingle, brazilian portuguese`. Cole a letra com as tags `[Verse]`, `[Pre-Chorus]`, `[Chorus]`, `[End]`. Escolha a versão que entra cantando logo e fala o nome certo.
+3. **Baixar.** No plano pago, Download, MP3. No grátis não tem download e o CDN responde 403 para script: abra a música no navegador, toque e grave o elemento `<audio>` com `captureStream()` + `MediaRecorder` até o evento `ended`; depois `ffmpeg -i gravado.webm song.mp3`.
+4. **Tempos.** `whisper-cli -l pt -f song16k.wav` dá o tempo de cada verso. Em `film.json` (modelo em `film.music.example.json`): `lines` = `[início, fim, "letra corrigida"]` e `scenes` = `{"img": "01", "start": s}` (uma imagem pode repetir; `badge: true` na última; `screen` funciona igual).
+5. **Imagens.** Mesmo processo da narrada; se a API do Gemini estiver sem cota, gere no Google Flow (imagem lá não gasta crédito) com a folha de personagem como referência.
+6. **Montar.** `python <skill>/scripts/music.py` gera `out/clipe.mp4`: música no lugar da voz, legenda da letra (tempo por palavra proporcional dentro do verso), clipes de `clips/NN.mp4` quando existem e a cena do selo sem zoom.
+
+Licença: música do plano grátis do Suno é só para uso não comercial (mandar para amigos, testar). Para anúncio pago, assine e gere de novo; a licença comercial não vale para o que foi gerado antes.
+
 ## Pegadinhas
 
 - O Gemini TTS lê em voz alta qualquer instrução de estilo enviada junto: mande só a fala.
@@ -45,3 +58,4 @@ Dor contada pelo personagem, em 1ª pessoa. Nada que afirme o corpo ou a vida de
 - Nome do produto em inglês: troque a grafia só para a voz em `SPOKEN` no `gen.py`.
 - Peça no `style` que todo texto dentro da cena saia no idioma do público, senão vem em inglês.
 - Mascote e selo longe dos rostos; a faixa de baixo do Reels é coberta pela interface.
+- O Veo deforma o que tem texto: trocou a tela do app por uma câmera inventada depois de ~3 s e entortou o nome 3D. Nessas cenas use a imagem parada (o script só usa o clipe se `clips/NN.mp4` existir) ou corte o clipe antes de deformar.
